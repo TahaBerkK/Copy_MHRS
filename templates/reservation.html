@@ -18,6 +18,14 @@
             height: 300px;
             margin: 0px 75px;
         }
+        .tab-content {
+            overflow-y: auto;
+            max-height: 300px; /* adjust the value to your liking */
+          }
+        .asimodal-sign{
+            height: 50px;
+            width: 50px;
+        }
     </style>
 </head>
 <body>
@@ -38,11 +46,105 @@
         </div>
     </header>
     <main>
+        <div>
         <div class="d-flex mt-3 bg-light mb-4 reservation">
             <div class="d-flex flex-column justify-content-around align-items-center">
-                <button class="btn btn-secondary reservation-btn">ASI OL</button>
-                <button class="btn btn-primary reservation-btn">Hekim</button>
-                <button class="btn btn-danger reservation-btn">Hastane</button>
+                <button type="button" class="btn btn-secondary reservation-btn" data-bs-toggle="modal" data-bs-target="#asiModal">
+                    <div class="d-flex">
+                        <div class="me-3 d-flex align-items-center"><h2><i class="fa-solid fa-syringe"></i></h2></div>
+                        <div class="d-flex flex-column">
+                            <h3 class="text-start">Asi ol</h3>
+                            <small>Lorem ipsum dolor sit amet consectetur</small>
+                        </div>
+                    </div>
+                </button>
+                <div class="modal fade" id="asiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <button type="button" class="btn-close align-self-end mt-2 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div class="modal-body">
+                                <h5>Bilgi</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint delectus, veniam aliquid dolorem nihil beatae distinctio repellat ipsum adipisci, explicabo culpa iure ullam repudiandae illo, aliquam assumenda perspiciatis! Ut, similique.</p>
+                                <ul style="list-style-type:disc;" class="text-danger">
+                                    <li>Biontech</li>
+                                    <li>Sinovac</li>
+                                    <li>Turkovac</li>
+                                </ul>
+                                <p>Asi olabileceginiz en yakin tarih: <strong>Deger</strong></p>
+                                <p>Evde asi hakki: <strong>Var/Yok</strong></p>
+                                <div class="d-flex flex-column align-items-center">
+                                    <button type="button" class="btn btn-danger text-start w-100 py-2 my-2">Biontech</button>
+                                    <button type="button" class="btn btn-danger text-start w-100 py-2 my-2">Sinovac</button>
+                                    <button type="button" class="btn btn-danger text-start w-100 py-2 my-2">Turkovac</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+  
+                <button type="button" class="btn btn-primary reservation-btn" data-bs-toggle="modal" data-bs-target="#hekimModal">
+                    <div class="d-flex">
+                        <div class="me-3 d-flex align-items-center"><h2><i class="fa-solid fa-user-doctor"></i></h2></div>
+                        <div class="d-flex flex-column">
+                            <h3 class="text-start">Aile hekimi randevusu al</h3>
+                            <small class="text-start">Lorem ipsum dolor sit amet consectetur</small>
+                        </div>
+                    </div>
+                </button>
+                <div class="modal fade" id="hekimModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <button type="button" class="btn-close align-self-end mt-2 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div class="modal-body">
+                                <h3>Aile Hekimi Randevu Al</h3>
+                                <ul style="list-style-type: none;">
+                                    <li>
+                                        <button type="button" class="asimodal-sign btn btn-primary rounded-50 border d-inline-flex justify-content-center align-items-center flex-column"><h3><i class="fa-solid fa-user-doctor"></i></h3></button>Isim
+                                    </li>
+                                    <li>
+                                        <button type="button" class="asimodal-sign btn rounded-50 border d-inline-flex justify-content-center align-items-center flex-column"><h3><i class="fa-solid fa-house-medical"></i></h3></button>Merkez ismi
+                                    </li>
+                                    <li>
+                                        <button type="button" class="asimodal-sign btn btn-danger rounded-50 border d-inline-flex justify-content-center align-items-center flex-column"><h3><i class="fa-solid fa-heart-pulse"></i></h3></button>Aile Birligi Birimi ismi
+                                    </li>
+                                    <li>
+                                        <button type="button" class="asimodal-sign btn btn-secondary rounded-50 border d-inline-flex justify-content-center align-items-center flex-column"><h3><i class="fa-solid fa-map-location"></i></h3></button>Konumu
+                                    </li>
+                                </ul>
+                                <div class="d-flex flex-column align-items-center">
+                                    <button type="button" class="btn btn-secondary text-start w-100 py-2 my-2">Aile Hekimi Muayene</button>
+                                    <button type="button" class="btn btn-warning text-start w-100 py-2 my-2">Aile hekimi tarama</button>
+                                    <button type="button" class="btn btn-primary text-start w-100 py-2 my-2">Aile Hekimi Uzaktan Degerlendirme</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-danger reservation-btn" data-bs-toggle="modal" data-bs-target="#hospitalModal">
+                    <div class="d-flex">
+                        <div class="me-3 d-flex align-items-center"><h2><i class="fa-solid fa-circle-h"></i></h2></div>
+                        <div class="d-flex flex-column">
+                            <h3 class="text-start">Hastane Randevu</h3>
+                            <small>Lorem ipsum dolor sit amet consectetur</small>
+                        </div>
+                    </div>
+                </button>
+                <div class="modal fade" id="hospitalModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <button type="button" class="btn-close align-self-end mt-2 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div class="modal-body">
+                                <h3>Arama tipi seciniz</h3>
+                                <div class="d-flex flex-column align-items-center">
+                                    <button type="button" class="btn btn-primary text-start w-100 py-2 my-2">Genel arama</button>
+                                    <button type="button" class="btn btn-secondary text-start w-100 py-2 my-2">Uzaktan degerlendirme</button>
+                                    <button type="button" class="btn btn-danger text-start w-100 py-2 my-2">Konuma gore arama</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="tab-nav container-fluid flex-column">
                 <ul class="nav nav-tabs flex-fill">
@@ -54,14 +156,14 @@
                     </li>
                 </ul>
                 <div class="tab-content h-100 m-0 p-0">
-                    <div class="tab-pane fade show active flex-fill" id="tab1">
-                        <div class="d-flex flex-grow">
-                            <button class="w-50 align-self-end">a</button>
+                    <div class="tab-pane fade show active h-100" id="tab1">
+                        <div class="d-flex flex-column h-100">
+                            <button class="btn btn-outline-dark w-75 rounded-4 mt-auto align-self-center">a</button>
                         </div>
                     </div>
                     <div class="tab-pane fade h-100" id="tab2">
-                        <div class="d-flex">
-                            <button class="w-50 align-self-end mb-auto">a</button>
+                        <div class="d-flex flex-column h-100">
+                            <button class="btn btn-outline-dark w-75 rounded-4 mt-auto align-self-center">a</button>
                         </div>
                     </div>
                 </div>
