@@ -42,7 +42,17 @@
         <div class="col-lg-4 col-md-3 col-sm-2 d-flex justify-content-around">
             <a href=""><i class="fa-solid fa-user-group"></i></a>
             <a href=""><i class="fa-solid fa-gear"></i></a>
-            <button type="button" class="btn btn-primary"><i class="fa-solid fa-user"></i> Isim</button>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-user me-2"></i>Isim
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-id-card me-2"></i>Hesap Bilgileri</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fa-regular fa-calendar-check me-2"></i>Randevu Bilgileri</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fa-regular fa-star me-2"></i>Favorilerim</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-power-off me-2"></i>Cikis</a></li>
+                </ul>
+            </div>
         </div>
     </header>
     <main>
